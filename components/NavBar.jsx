@@ -7,65 +7,77 @@ import { BsFillPersonLinesFill } from "react-icons/bs";
 import { useRouter } from "next/router";
 const NavBar = () => {
   const [nav, setNav] = useState(false);
-  const[shadow, setShadow] = useState(false);
-  const[navBg, setNavBg] = useState("#ecf0f3");
-  const[linkColor, setLinkColor] = useState("#1f2937")
-  const router = useRouter()
+  const [shadow, setShadow] = useState(false);
+  const [navBg, setNavBg] = useState("#ecf0f3");
+  const [linkColor, setLinkColor] = useState("#1f2937");
+  const router = useRouter();
 
-  useEffect(() =>{
-    if(router.asPath ==="/BackeryApp"){
-      setNavBg("transparent")
-      setLinkColor("#ecf0f3")
-    }else{
-      setNavBg("#ecf0f3")
-      setLinkColor("#1f2937")
+  useEffect(() => {
+    if (
+      router.asPath === "/BackeryApp" ||
+      router.asPath === "/moviex" ||
+      router.asPath === "/ChatApp" ||
+      router.asPath === "/CryptoApp"
+    ) {
+      setNavBg("transparent");
+      setLinkColor("#ecf0f3");
+    } else {
+      setNavBg("#ecf0f3");
+      setLinkColor("#1f2937");
     }
-  },[router])
+  }, [router]);
 
-  useEffect(()=>{
+  useEffect(() => {
     const handleSadow = () => {
-      if(window.scrollY >= 90) {
-        setShadow(true)
+      if (window.scrollY >= 90) {
+        setShadow(true);
       } else {
-        setShadow(false)
+        setShadow(false);
       }
-    }
-    window.addEventListener("scroll", handleSadow)
-  }, [])
+    };
+    window.addEventListener("scroll", handleSadow);
+  }, []);
 
   const handleNav = () => {
     setNav(!nav);
   };
 
   return (
-    <div style={{backgroundColor: `${navBg}`}} className={shadow ? "fixed w-full h-20 shadow-xl z-[100]" : "fixed w-full h-20 z-[100]"}>
+    <div
+      style={{ backgroundColor: `${navBg}` }}
+      className={
+        shadow
+          ? "fixed w-full h-20 shadow-xl z-[100]"
+          : "fixed w-full h-20 z-[100]"
+      }
+    >
       <div className=" flex justify-between items-center w-full h-full px-2 2xl:px-16">
         <Link href="/#home" scroll={false}>
-        <Image
-          src="/../public/assets/navbarimage.png"
-          width="70"
-          height="70"
-          alt="/"
-        />
+          <Image
+            src="/../public/assets/navbarimage.png"
+            width="70"
+            height="70"
+            alt="/"
+          />
         </Link>
         <div>
-          <ul style={{color: `${linkColor}`}} className="hidden md:flex">
+          <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
             <Link href="/#home" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">Home</li>
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400">Home</li>
             </Link>
             <Link href="/#about" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">About</li>
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400">About</li>
             </Link>
             <Link href="/#skills" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">skills</li>
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400">skills</li>
             </Link>
             <Link href="/#projects" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400">
                 Projects
               </li>
             </Link>
             <Link href="/#contact" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b">
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400">
                 Contact
               </li>
             </Link>
@@ -77,7 +89,9 @@ const NavBar = () => {
       </div>
 
       <div
-        className={nav ? "md:hidden fixed left-0 top-0 w-full h-screen bg-black/70" : ""}
+        className={
+          nav ? "md:hidden fixed left-0 top-0 w-full h-screen bg-black/70" : ""
+        }
       >
         <div
           className={
@@ -89,12 +103,12 @@ const NavBar = () => {
           <div>
             <div className="flex w-full items-center justify-between">
               <Link href="/">
-              <Image
-                src="/../public/assets/navbarimage.png"
-                alt="/"
-                height={50}
-                width={50}
-              />
+                <Image
+                  src="/../public/assets/navbarimage.png"
+                  alt="/"
+                  height={50}
+                  width={50}
+                />
               </Link>
               <div
                 onClick={handleNav}
