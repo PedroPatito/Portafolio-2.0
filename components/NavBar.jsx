@@ -5,12 +5,15 @@ import { AiOutlineClose, AiOutlineMail, AiOutlineMenu } from "react-icons/ai";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { useRouter } from "next/router";
+import UseColorMode from "../Hooks/UseColorMode";
 const NavBar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
   const [navBg, setNavBg] = useState("#ecf0f3");
   const [linkColor, setLinkColor] = useState("#1f2937");
   const router = useRouter();
+
+  const [colorMode, setColorMode] = UseColorMode();
 
   useEffect(() => {
     if (
@@ -47,11 +50,12 @@ const NavBar = () => {
       style={{ backgroundColor: `${navBg}` }}
       className={
         shadow
-          ? "fixed w-full h-20 shadow-xl z-[100]"
+          ? "fixed w-full h-20 shadow-xl z-[100] dark:shadow-gray-700 dark:shadow-md"
           : "fixed w-full h-20 z-[100]"
       }
+      
     >
-      <div className=" flex justify-between items-center w-full h-full px-2 2xl:px-16">
+      <div className=" flex justify-between items-center w-full h-full px-2 2xl:px-16 dark:bg-gray-800">
         <Link href="/#home" scroll={false}>
           <Image
             src="/../public/assets/navbarimage.png"
@@ -60,24 +64,27 @@ const NavBar = () => {
             alt="/"
           />
         </Link>
+        
         <div>
+          
           <ul style={{ color: `${linkColor}` }} className="hidden md:flex">
+          <button onClick={() => setColorMode(colorMode === "light" ? "dark" : "light")} className="dark:shadow-gray-700 dark:shadow-md"> Dark / light</button>
             <Link href="/#home" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400">Home</li>
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400 dark:text-white">Home</li>
             </Link>
             <Link href="/#about" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400">About</li>
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400 dark:text-white">About</li>
             </Link>
             <Link href="/#skills" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400">skills</li>
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400 dark:text-white">skills</li>
             </Link>
             <Link href="/#projects" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400">
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400 dark:text-white">
                 Projects
               </li>
             </Link>
             <Link href="/#contact" scroll={false}>
-              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400">
+              <li className="ml-10 text-sm uppercase hover:border-b border-b-neutral-400 dark:text-white">
                 Contact
               </li>
             </Link>

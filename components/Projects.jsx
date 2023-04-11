@@ -7,12 +7,12 @@ import cripto from "../public/assets/projects/cripto.png"
 import chatapp from "../public/assets/projects/chatapp.png"
 const Projects = () => {
   return (
-    <div id="projects" className="w-full h-[100vh] py-20">
+    <div id="projects" className="w-full h-[100vh] py-20 dark:bg-gray-800">
       <div className="max-w-[1240px] mx-auto px-2 ">
         <p className="text-xl tracking-widest uppercase text-teal-600 mt-10">
           Projects
         </p>
-        <h2 className="py-4">what i've built</h2>
+        <h2 className="py-4 dark:text-white">what i've built</h2>
         <div className="grid md:grid-cols-2 gap-8">
           <ProjectItem
             title="Moviex"
