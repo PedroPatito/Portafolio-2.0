@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <div
       id="projects"
-      className=" inline  w-full h-[100vh] py-20 dark:bg-gray-800 "
+      className=" inline  w-full h-[100vh] py-20 dark:bg-gray-800"
     >
       <div className="flex">
         <div className="max-w-[1240px] mx-auto px-2 ">
