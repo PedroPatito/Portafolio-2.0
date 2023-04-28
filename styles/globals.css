@@ -37,3 +37,12 @@ html{
     @apply shadow-xl shadow-gray-400 rounded-xl uppercase bg-gradient-to-r from-teal-600 to-teal-400 text-white; 
   }
 }
+
+@layer utilities {
+  .scrollbar-medium::-webkit-scrollbar {
+    width: 12px;
+  }
+  .scrollbar-rounded-edge::-webkit-scrollbar-thumb {
+    border-radius: 1rem;
+  }
+}
