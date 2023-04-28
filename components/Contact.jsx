@@ -4,7 +4,7 @@ import React from "react";
 import { AiOutlineMail } from "react-icons/ai";
 import { BsFillPersonLinesFill } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-import ContactImg from "../public/assets/contact.jpg";
+import ContactImg from "../public/assets/contact.png";
 import { Popover, PopoverContent, PopoverHandler } from "@material-tailwind/react";
 
 const Contact = () => {
@@ -45,13 +45,11 @@ const Contact = () => {
           {/* left */}
           <div className="col-span-3 lg:col-span-2 w-full h-full shadow-xl shadow-gray-400 rounded-xl p-4 dark:shadow-gray-700 ">
             <div className="lg:p-4 h-full">
-              <div>
+              <div className="">
                 <Image
-                  className="rounded-xl hover:scale-105 ease-in duration-300"
+                  className=" w-full rounded-xl hover:scale-105 ease-in duration-300 max-w-[400px]"
                   src={ContactImg}
                   alt="/"
-                  height={300}
-                  width={300}
                 />
               </div>
               <div>

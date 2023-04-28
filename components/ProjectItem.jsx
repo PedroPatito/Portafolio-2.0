@@ -15,7 +15,6 @@ const ProjectItem = ({ title, backgroundImage, tecnologies, description, demo, c
 
 
   return (
-    // <div className=" flex flex-col items-center justify-center h-fit w-fit shadow-xl shadow-gray-400 rounded-xl p-4 group  dark:shadow-gray-700">
     <ClientOnly>
           <Card className="flex flex-col items-center w-96">
       <CardHeader color="blue" className="relative h-50 ">
@@ -26,16 +25,17 @@ const ProjectItem = ({ title, backgroundImage, tecnologies, description, demo, c
         />
       </CardHeader>
       <CardBody className="text-center">
-        <Typography variant="h5" className="mb-2">
-        <h5 className="dark:text-white">{title}</h5>
+        <Typography variant="h5" className="mb-2 dark:text-white">
+        {title}
         </Typography>
         <Typography
                 color="blue-gray"
+                className="dark:text-white"
               >
-                <p className="dark:text-white">{tecnologies}</p>
+                {tecnologies}
               </Typography>
-        <Typography>
-         <p className="dark:text-white">{description}</p> 
+        <Typography className="dark:text-white">
+        {description}
         </Typography>
       </CardBody>
       <CardFooter divider className="flex flex-row items-center justify-between py-3">
@@ -51,11 +51,7 @@ const ProjectItem = ({ title, backgroundImage, tecnologies, description, demo, c
       </CardFooter>
     </Card>
     </ClientOnly>
-    // </div>
   );
 };
 
 export default ProjectItem;
-
-
-

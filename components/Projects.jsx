@@ -26,7 +26,7 @@ const Projects = () => {
               description=" A movie streaming application where a main window displays a list of movies fetched from an API. Users can register and log in to save their favorite movies."
               demo="https://web-de-peliculas.web.app/"
               code="https://github.com/PedroPatito/movie-app"
-              disabled=""
+              disabled={false}
             />
             <ProjectItem
               title="The backer society"
@@ -36,7 +36,7 @@ const Projects = () => {
               description=" An e-commerce website specialized on selling backing equipment. The technologies used were JavaScript, React, Bootstrap, and Firebase."
               demo="https://proyecto-baker-e-comerce.web.app/"
               code="https://github.com/PedroPatito/Baker-eComerce"
-              disabled=""
+              disabled={false}
             />
             <ProjectItem
               title="Cripto app"
@@ -46,7 +46,7 @@ const Projects = () => {
               description=" This application uses the CoinGecko API. It has sections for calculating conversions between different cryptocurrencies, calculating loans, and a watchlist."
               demo="https://pedropatito.github.io/Conversor-cripto-y-calculo-de-prestamos./"
               code="https://github.com/PedroPatito/Conversor-cripto-y-calculo-de-prestamos."
-              disabled=""
+              disabled={false}
             />
             <ProjectItem
               title="ChatApp"
@@ -56,7 +56,7 @@ const Projects = () => {
               description=" This is an application that consists of a group chat and a forum where users can make posts with a title, an image, and a paragraph."
               demo=""
               code="https://github.com/PedroPatito/Chat-app-RN"
-              disabled="true"
+              disabled={true}
             />
           </div>
         </div>
