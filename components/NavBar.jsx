@@ -7,8 +7,9 @@ import {
 } from "react-icons/bs";
 import { useRouter } from "next/router";
 import UseColorMode from "../Hooks/UseColorMode";
-import DarkLightButton from "./DarkLightButton";
 import ClientOnly from "./ClientOnly";
+import navBarImage from "../public/assets/navbarimage.png"
+
 const NavBar = () => {
   const [nav, setNav] = useState(false);
   const [shadow, setShadow] = useState(false);
@@ -16,7 +17,7 @@ const NavBar = () => {
   const [linkColor, setLinkColor] = useState("#1f2937");
   const router = useRouter();
   const [bgDark, setBgDark] = useState(true);
-
+  
   const [colorMode, setColorMode] = UseColorMode();
 
   useEffect(() => {
@@ -68,7 +69,7 @@ const NavBar = () => {
       >
         <Link href="/#home" scroll={false}>
           <Image
-            src="/../public/assets/navbarimage.png"
+            src={navBarImage}
             width="70"
             height="70"
             alt="/"
@@ -77,7 +78,6 @@ const NavBar = () => {
 
         <div>
           <ul style={{ color: `${linkColor}` }} className="hidden md:flex justify-center items-center">
-            {/* <DarkLightButton/> */}
             <ClientOnly>
             <div
               onClick={() => {
